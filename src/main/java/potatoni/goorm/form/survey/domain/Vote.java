@@ -3,7 +3,7 @@ package potatoni.goorm.form.survey.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import potatoni.goorm.form.member.MemberDto;
+import potatoni.goorm.form.member.MemberEntity;
 
 @Entity
 @Getter
@@ -17,7 +17,7 @@ public class Vote {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
-    private MemberDto member;
+    private MemberEntity member;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "survey_id")

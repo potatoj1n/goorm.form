@@ -13,9 +13,18 @@ public class MemberEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false, unique = true)
     private String loginId;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String password;
+
+    public MemberEntity() {
+    }
 
     public MemberEntity(Long id, String loginId, String name, String password) {
         this.id = id;
@@ -24,16 +33,4 @@ public class MemberEntity {
         this.password = password;
     }
 
-    public MemberEntity() {
-    }
-
-    @Override
-    public String toString() {
-        return "MemberEntity{" +
-                "id=" + id +
-                ", loginId='" + loginId + '\'' +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
 }
